@@ -1,0 +1,9 @@
+.transparent-container {
+    z-index: 1;
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
+    border: 20px solid black; /* Optional border */
+    padding: 20px; /* Optional padding */
+    border-radius: 5px; /* Optional rounded corners */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow */
+  }
+  

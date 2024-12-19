@@ -1,0 +1,20 @@
+body{
+  z-index: 0;
+  background-image: url('bill.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat:no-repeat;
+}
+h3 {
+  color: white;
+  border: 1px solid black;
+  box-sizing: border-box;
+  border-radius: 5px 5px 5px 5px;;
+  width:100px;
+  height: 35px;
+  box-shadow:0px 0px 4px 4px black ;
+}
+
+.table {
+  margin-top: 20px;
+}
