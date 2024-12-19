@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Container, Row, Col, Button, Form } from "react-bootstrap";
-import { useHistory } from "react-router-dom"; // Import useHistory from react-router-dom
+import { useNavigate } from "react-router-dom";
 
 const SignUpPage = () => {
   const [isSignUp, setIsSignUp] = useState(true);
@@ -10,9 +10,8 @@ const SignUpPage = () => {
     password: "",
   });
   
-  const history = useHistory(); // Hook to manage navigation
+  const navigate = useNavigate(); // Hook to manage navigation
 
-  // Handle form input change
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -20,22 +19,17 @@ const SignUpPage = () => {
     });
   };
 
-  // Handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
     if (isSignUp) {
-      // Simulate a Sign Up action, then switch to Login
       console.log("Sign Up data:", formData);
       setIsSignUp(false); // Switch to Login form
     } else {
-      // Simulate Login action
       console.log("Login data:", formData);
-      // After successful login, redirect to Dashboard
-      history.push("/dashboard");
+      navigate("/dashboard"); // Redirect to Dashboard
     }
   };
 
-  // Toggle between Sign Up and Login
   const toggleForm = () => {
     setIsSignUp(!isSignUp);
   };
@@ -47,7 +41,6 @@ const SignUpPage = () => {
           <div className="card shadow p-4">
             <h2 className="text-center mb-4">{isSignUp ? "Sign Up" : "Login"}</h2>
 
-            {/* Sign Up Form */}
             {isSignUp ? (
               <Form onSubmit={handleSubmit}>
                 <Form.Group controlId="formBasicName">
@@ -88,7 +81,6 @@ const SignUpPage = () => {
                 </Button>
               </Form>
             ) : (
-              // Login Form
               <Form onSubmit={handleSubmit}>
                 <Form.Group controlId="formBasicEmail">
                   <Form.Label>Email address</Form.Label>

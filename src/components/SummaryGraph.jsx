@@ -1,25 +1,34 @@
-import React from "react";
+//import React from "react";
 import { useSelector } from "react-redux";
 import { Row, Col, Card } from "react-bootstrap";
-
-
 
 const SummaryGraph = () => {
   const { totalAmount, unpaidAmount } = useSelector((state) => state.invoice);
 
+  // Fallback values for undefined or null amounts
+  const formattedTotalAmount = totalAmount ? totalAmount : 0;
+  const formattedUnpaidAmount = unpaidAmount ? unpaidAmount : 0;
+
   return (
     <Row>
-      <Col>
-  <Card body>
-          <h5><u>Total Invoice Amount</u></h5>
-          <p>₹{totalAmount}</p>
+      <Col xs={12} sm={6} md={4}>
+        <Card className="shadow-sm" body>
+          <h5 className="text-center text-primary">
+            <u>Total Invoice Amount</u>
+          </h5>
+          <p className="text-center" style={{ fontSize: "1.5rem" }}>
+            ₹{formattedTotalAmount.toLocaleString("en-IN")}
+          </p>
         </Card>
       </Col>
-      <Col>
-  <Card body>
-  
-          <h5><u>Unpaid Amount</u></h5>
-          <p>₹{unpaidAmount}</p>
+      <Col xs={12} sm={6} md={4}>
+        <Card className="shadow-sm" body>
+          <h5 className="text-center text-danger">
+            <u>Unpaid Amount</u>
+          </h5>
+          <p className="text-center" style={{ fontSize: "1.5rem" }}>
+            ₹{formattedUnpaidAmount.toLocaleString("en-IN")}
+          </p>
         </Card>
       </Col>
     </Row>
