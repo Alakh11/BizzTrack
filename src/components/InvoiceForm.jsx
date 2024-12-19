@@ -1,4 +1,3 @@
-//import React from "react";
 import { useDispatch } from "react-redux";
 import { useForm } from "react-hook-form";
 import { addInvoice } from "../redux/invoiceSlice";
@@ -24,8 +23,14 @@ const InvoiceForm = () => {
       <Form.Group className="mb-3">
         <Form.Label>Client Name</Form.Label>
         <Form.Control
+         style={{
+          border: "1px solid grey",
+          borderRadius:"4px",
+        
+        }}
           type="text"
           placeholder="Enter Client Name"
+          
           {...register("client", { required: true })}
         />
       </Form.Group>
@@ -33,15 +38,26 @@ const InvoiceForm = () => {
       <Form.Group className="mb-3">
         <Form.Label>Amount</Form.Label>
         <Form.Control
+        style={{
+          border: "1px solid grey",
+          borderRadius:"4px",
+        
+        }}
           type="number"
           placeholder="Enter Invoice Amount"
+          
           {...register("amount", { required: true })}
         />
       </Form.Group>
 
       <Form.Group className="mb-3">
         <Form.Label>Status</Form.Label>
-        <Form.Select {...register("status", { required: true })}>
+        <Form.Select
+        style={{
+          border: "1px solid grey",
+          borderRadius:"4px",}}
+          {...register("status", { required: true })}
+        >
           <option value="unpaid">Unpaid</option>
           <option value="paid">Paid</option>
         </Form.Select>

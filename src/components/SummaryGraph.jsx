@@ -12,7 +12,9 @@ const SummaryGraph = () => {
   return (
     <Row>
       <Col xs={12} sm={6} md={4}>
-        <Card className="shadow-sm" body>
+        <Card style={{
+          border: "1px solid grey",
+          borderRadius:"4px",}}className="shadow-sm" body>
           <h5 className="text-center text-primary">
             <u>Total Invoice Amount</u>
           </h5>
@@ -22,9 +24,23 @@ const SummaryGraph = () => {
         </Card>
       </Col>
       <Col xs={12} sm={6} md={4}>
-        <Card className="shadow-sm" body>
-          <h5 className="text-center text-danger">
+        <Card style={{
+          border: "1px solid grey",
+          borderRadius:"4px",}}className="shadow-sm"body>
+          <h5 className="text-center text-danger ">
             <u>Unpaid Amount</u>
+          </h5>
+          <p className="text-center" style={{ fontSize: "1.5rem" }}>
+            ₹{formattedUnpaidAmount.toLocaleString("en-IN")}
+          </p>
+        </Card>
+      </Col>
+      <Col xs={12} sm={6} md={4}>
+        <Card style={{
+          border: "1px solid grey",
+          borderRadius:"4px",}} className="shadow-sm" body>
+          <h5 className="text-center text-success">
+            <u>Paid Amount</u>
           </h5>
           <p className="text-center" style={{ fontSize: "1.5rem" }}>
             ₹{formattedUnpaidAmount.toLocaleString("en-IN")}

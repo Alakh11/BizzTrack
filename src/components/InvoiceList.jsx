@@ -9,7 +9,7 @@ const InvoiceList = () => {
     <Table striped bordered hover>
       <thead>
         <tr>
-          <th>#</th>
+          <th>Sr. No</th>
           <th>Client</th>
           <th>Amount</th>
           <th>Status</th>

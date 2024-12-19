@@ -1,20 +1,30 @@
 body{
   z-index: 0;
-  background-image: url('bill.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat:no-repeat;
+
+  
 }
 h3 {
   color: white;
-  border: 1px solid black;
+ 
   box-sizing: border-box;
   border-radius: 5px 5px 5px 5px;;
   width:100px;
   height: 35px;
-  box-shadow:0px 0px 4px 4px black ;
+  
 }
 
 .table {
   margin-top: 20px;
+}
+
+.custom-border {
+  border: 2px solid #007bff; /* Example: Blue border */
+  border-radius: 4px; /* Optional: Rounded corners */
+  padding: 10px; /* Optional: Add padding for better spacing */
+}
+
+.custom-border:focus {
+  outline: none; /* Remove default outline */
+  border-color: #6610f2; /* Optional: Change border color on focus */
+  box-shadow: 0 0 5px rgba(102, 16, 242, 0.5); /* Optional: Add shadow on focus */
 }
