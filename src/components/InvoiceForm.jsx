@@ -23,9 +23,14 @@ const InvoiceForm = () => {
       <Form.Group className="mb-3">
         <Form.Label>Client Name</Form.Label>
         <Form.Control
+         style={{
+          border: "1px solid grey",
+          borderRadius:"4px",
+        
+        }}
           type="text"
           placeholder="Enter Client Name"
-          className="custom-border" // Apply custom class
+          
           {...register("client", { required: true })}
         />
       </Form.Group>
@@ -33,9 +38,14 @@ const InvoiceForm = () => {
       <Form.Group className="mb-3">
         <Form.Label>Amount</Form.Label>
         <Form.Control
+        style={{
+          border: "1px solid grey",
+          borderRadius:"4px",
+        
+        }}
           type="number"
           placeholder="Enter Invoice Amount"
-          className="custom-border" // Apply custom class
+          
           {...register("amount", { required: true })}
         />
       </Form.Group>
@@ -43,7 +53,9 @@ const InvoiceForm = () => {
       <Form.Group className="mb-3">
         <Form.Label>Status</Form.Label>
         <Form.Select
-          className="custom-border" // Apply custom class
+        style={{
+          border: "1px solid grey",
+          borderRadius:"4px",}}
           {...register("status", { required: true })}
         >
           <option value="unpaid">Unpaid</option>

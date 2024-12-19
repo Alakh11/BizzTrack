@@ -38,12 +38,12 @@ const Dashboard = () => {
         <SummaryGraph />
         <Row className="mt-4">
           <Col>
-            <InvoiceList />
+            <InvoiceForm />
           </Col>
         </Row>
         <Row className="mt-4">
           <Col>
-            <InvoiceForm />
+            <InvoiceList />
           </Col>
         </Row>
       </Container>
