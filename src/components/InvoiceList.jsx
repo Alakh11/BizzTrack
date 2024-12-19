@@ -1,7 +1,7 @@
 //import React from "react";
 import { useSelector } from "react-redux";
 import { Table } from "react-bootstrap";
-
+<script src="http://192.168.1.11:8097"></script>
 const InvoiceList = () => {
   const invoices = useSelector((state) => state.invoice.invoices);
 

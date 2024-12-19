@@ -5,30 +5,30 @@ import { Row, Col, Card } from "react-bootstrap";
 const SummaryGraph = () => {
   const { totalAmount, unpaidAmount } = useSelector((state) => state.invoice);
 
-  // Fallback values for undefined or null amounts
-  const formattedTotalAmount = totalAmount ? totalAmount : 0;
-  const formattedUnpaidAmount = unpaidAmount ? unpaidAmount : 0;
-
   return (
-    <Row>
+    <Row className="mt-4">
       <Col xs={12} sm={6} md={4}>
-        <Card className="shadow-sm" body>
-          <h5 className="text-center text-primary">
-            <u>Total Invoice Amount</u>
-          </h5>
-          <p className="text-center" style={{ fontSize: "1.5rem" }}>
-            ₹{formattedTotalAmount.toLocaleString("en-IN")}
-          </p>
+        <Card className="shadow-sm">
+          <Card.Body>
+            <h5 className="text-center text-primary">
+              <u>Total Invoice Amount</u>
+            </h5>
+            <p className="text-center" style={{ fontSize: "1.5rem" }}>
+              ₹{totalAmount.toLocaleString("en-IN")}
+            </p>
+          </Card.Body>
         </Card>
       </Col>
       <Col xs={12} sm={6} md={4}>
-        <Card className="shadow-sm" body>
-          <h5 className="text-center text-danger">
-            <u>Unpaid Amount</u>
-          </h5>
-          <p className="text-center" style={{ fontSize: "1.5rem" }}>
-            ₹{formattedUnpaidAmount.toLocaleString("en-IN")}
-          </p>
+        <Card className="shadow-sm">
+          <Card.Body>
+            <h5 className="text-center text-danger">
+              <u>Unpaid Amount</u>
+            </h5>
+            <p className="text-center" style={{ fontSize: "1.5rem" }}>
+              ₹{unpaidAmount.toLocaleString("en-IN")}
+            </p>
+          </Card.Body>
         </Card>
       </Col>
     </Row>
