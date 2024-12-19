@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Container, Row, Col, Button, Form } from "react-bootstrap";
+import { useHistory } from "react-router-dom"; // Import useHistory from react-router-dom
 
 const SignUpPage = () => {
   const [isSignUp, setIsSignUp] = useState(true);
@@ -8,6 +9,8 @@ const SignUpPage = () => {
     email: "",
     password: "",
   });
+  
+  const history = useHistory(); // Hook to manage navigation
 
   // Handle form input change
   const handleChange = (e) => {
@@ -25,8 +28,10 @@ const SignUpPage = () => {
       console.log("Sign Up data:", formData);
       setIsSignUp(false); // Switch to Login form
     } else {
-      // Simulate Login submission (this is for future use)
+      // Simulate Login action
       console.log("Login data:", formData);
+      // After successful login, redirect to Dashboard
+      history.push("/dashboard");
     }
   };
 

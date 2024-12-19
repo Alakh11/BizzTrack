@@ -6,9 +6,13 @@ import SignUpPage from "./components/SignUpPage";
 
 function App() {
   return (
-    <Provider store={store}>
-      <SignUpPage />
-    </Provider>
+    <Router>
+      <Switch>
+        <Route path="/login" component={SignUpPage} />
+        <Route path="/dashboard" component={Dashboard} />
+        <Route exact path="/" component={SignUpPage} />
+      </Switch>
+    </Router>
   );
 }
 
