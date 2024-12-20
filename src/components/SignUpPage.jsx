@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import { Container, Row, Col, Button, Form } from "react-bootstrap";
-import { useNavigate } from "react-router-dom";
+import { useNavigate ,useLocation} from "react-router-dom";
 
 const SignUpPage = () => {
   const [isSignUp, setIsSignUp] = useState(true);
@@ -11,7 +11,15 @@ const SignUpPage = () => {
   });
   
   const navigate = useNavigate(); // Hook to manage navigation
+  const location = useLocation();
 
+  useEffect(() => {
+    if (location.pathname === "/login") {
+      setIsSignUp(false);
+    } else {
+      setIsSignUp(true);
+    }
+  }, [location.pathname]);
   const handleChange = (e) => {
     setFormData({
       ...formData,
