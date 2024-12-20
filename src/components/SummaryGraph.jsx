@@ -3,11 +3,13 @@ import { useSelector } from "react-redux";
 import { Row, Col, Card } from "react-bootstrap";
 
 const SummaryGraph = () => {
-  const { totalAmount, unpaidAmount } = useSelector((state) => state.invoice);
+  const { totalAmount, unpaidAmount ,paidAmount} = useSelector((state) => state.invoice);
 
   // Fallback values for undefined or null amounts
   const formattedTotalAmount = totalAmount ? totalAmount : 0;
   const formattedUnpaidAmount = unpaidAmount ? unpaidAmount : 0;
+  const formattedPaidAmount = paidAmount ? paidAmount : 0;
+
 
   return (
     <Row>
@@ -43,7 +45,7 @@ const SummaryGraph = () => {
             <u>Paid Amount</u>
           </h5>
           <p className="text-center" style={{ fontSize: "1.5rem" }}>
-            ₹{formattedUnpaidAmount.toLocaleString("en-IN")}
+            ₹{formattedPaidAmount.toLocaleString("en-IN")}
           </p>
         </Card>
       </Col>
